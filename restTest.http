@@ -1,0 +1,15 @@
+### REST Clinet 샘플 파일
+### 각 요청의 왼쪽 위에 나타나는 Send Request를 클릭하거나 우클릭 메뉴에서
+### 선택하여 실행 가능
+GET https://jsonplaceholder.typicode.com/posts/1 HTTP/1.1
+
+### POST 요청은 block되었는지 에러가 남
+그리고 그 아래에 하단의 POST 요청을 작성하자.
+
+POST https://jsonplaceholder.typicode.com/posts HTTP/1.1
+Content-Type: application/json; charset=UTF-8
+
+{
+  "name": "sample",
+  "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
