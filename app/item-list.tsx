@@ -8,7 +8,7 @@ type Props = {
 };
 
 function Welcome(props: Props) {
-  return <h4>Hello, {props.name}</h4>;
+  return <h1 className="text-3xl font-bold">Hello, {props.name}</h1>;
 }
 
 function ItemList() {
@@ -22,7 +22,8 @@ function ItemList() {
 
   return (
     <div>
-      <Welcome name="Alice" />
+      <Welcome name="Next.js" />
+      <hr />
       <h5 className="text-xl font-bold">웹 기본</h5>
       <h1 className="text-2xl font-bold">구성 요소</h1>
       <ul id="itemList" className="List-disc list-inside">

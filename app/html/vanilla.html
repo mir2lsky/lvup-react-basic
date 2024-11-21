@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>바닐라 JS 예제</title>
+</head>
+<body>
+  <div>
+    <h5>웹 기본</h5>
+    <h1>구성 요소</h1>
+    <ul id="itemList">
+      <li>HTML</li>
+      <li>자바스크립트</li>
+      <li>CSS</li>
+    </ul>
+    <input type="text" id="itemInput" placeholder="추가할 항목을 입력하세요."/>
+    <button onclick="addItem()">항목 추가</button>
+
+    <script>
+      function addItem() {
+        var input = document.getElementById('itemInput');
+        var list = document.getElementById('itemList');
+        var newItem = document.createElement('li');
+        newItem.textContent = input.value;
+        list.appendChild(newItem);
+        input.value = '';
+      }
+    </script>
+  </div>
+</body>
+</html>

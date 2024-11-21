@@ -1,0 +1,53 @@
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>리액트 예제</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/jsx">
+    const app = document.getElementById("app")
+
+    function ItemList() {
+      const [items, setItems] = React.useState([])
+      const [inputValue, setInputValue] = React.useState('')
+
+      const addItem = () => {
+          setItems([...items, inputValue])
+          setInputValue('')
+      };
+
+      return (
+          <div>
+            <h5>웹 기본</h5>
+            <h1>구성 요소</h1>
+            <ul id="itemList">
+              <li>HTML</li>
+              <li>자바스크립트</li>
+              <li>CSS</li>
+              {items.map((item, index) => (
+              <li key={index}>{item}</li>
+              ))}
+            </ul>
+          <input
+              type="text"
+              value={inputValue}
+              onChange={e => setInputValue(e.target.value)}
+              placeholder="항목 추가"
+          />
+          <button onClick={addItem}>항목 추가</button>
+          </div>
+      )
+    }
+
+    ReactDOM.render(<ItemList />, app)
+    </script>
+  </body>
+</html>
